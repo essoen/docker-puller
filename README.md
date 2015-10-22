@@ -12,7 +12,7 @@ Docker.io gives you the possibility to set a web hook after a successful build. 
 docker-puller listen to these web hooks and can be configured to run a particular script, given a specific hook.
 
 ## Example web hook
-In docker.io setup a web hook with an URL like this: https://myserver.com/dockerpuller?token=abc123&hook=myhook1
+In docker.io setup a web hook with an URL like this: https://myserver.com/dockerhook?token=abc123&hook=myhook1
 
 ## Example docker-puller configuration
 
