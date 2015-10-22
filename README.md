@@ -25,7 +25,7 @@ In docker.io setup a web hook with an URL like this: https://myserver.com/docker
     }
     
 ## Nginx-setup
-You'll need Nginx to pass the requests along to this script. The follwing configuration will do that for you:
+You'll need Nginx (or something similar) to pass the requests along to this script. The following Nginx-configuration will do that for you:
 
     server {
         listen 80;
