@@ -34,4 +34,11 @@ You'll need Nginx (or something similar) to pass the requests along to this scri
             proxy_pass http://localhost:8000;
         }
     }
+    
+To keep it running you can use something like [Upstart](http://upstart.ubuntu.com/), you can daemonize it or use a tool like [ForeverJS](https://github.com/foreverjs/forever):
+
+    npm install -g forever
+    cd dockerpuller
+    forever start -c python app.py
+
 
