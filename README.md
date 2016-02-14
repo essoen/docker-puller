@@ -11,13 +11,10 @@ Docker.io gives you the possibility to set a web hook after a successful build. 
 
 docker-puller listen to these web hooks and can be configured to run a particular script, given a specific hook.
 
-## Installation 
-It runs on Python 3. Just install the requirements with `pip install -r requirements.txt`.
+## Setup 
+It runs on Python 3. First install the requirements with `pip install -r requirements.txt`.
 
-## Example web hook
-In docker.io setup a web hook with an URL like this: https://myserver.com/dockerhook?token=abc123&hook=myhook1
-
-## Example docker-puller configuration
+Set up a configuration, that is change `config.json`. Example docker-puller configuration:
 
     {
         "port": 8000,
@@ -26,6 +23,9 @@ In docker.io setup a web hook with an URL like this: https://myserver.com/docker
             "myhook1": "restart-container-myhook1.sh"
         }
     }
+
+Now add the hook to your Docker.io-setup like this: `https://myserver.com/dockerhook?token=abc123&hook=myhook1`
+    
     
 ## Nginx-setup
 You'll need Nginx (or something similar) to pass the requests along to this script. The following Nginx-configuration will do that for you:
