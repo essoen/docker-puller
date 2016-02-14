@@ -11,6 +11,9 @@ Docker.io gives you the possibility to set a web hook after a successful build. 
 
 docker-puller listen to these web hooks and can be configured to run a particular script, given a specific hook.
 
+## Installation 
+It runs on Python 3. Just install the requirements with `pip install -r requirements.txt`.
+
 ## Example web hook
 In docker.io setup a web hook with an URL like this: https://myserver.com/dockerhook?token=abc123&hook=myhook1
 
