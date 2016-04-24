@@ -38,10 +38,16 @@ You'll need Nginx (or something similar) to pass the requests along to this scri
         }
     }
     
-To keep it running you can use something like [Upstart](http://upstart.ubuntu.com/), you can daemonize it or use a tool like [ForeverJS](https://github.com/foreverjs/forever):
+To keep it running you can use something like [Upstart](http://upstart.ubuntu.com/). A simple Upstart-configuration:
 
-    npm install -g forever
-    cd dockerpuller
-    forever start -c python app.py
+    start on runlevel [2345]
+    stop on runlevel [016]
+
+    respawn
+    cd /path/to/project/docker-puller/dockerpuller
+    exec python3 app.py
+
+Save as `docker-puller.conf` and place in `/etc/init/` on your Ubuntu system.
+
 
 
